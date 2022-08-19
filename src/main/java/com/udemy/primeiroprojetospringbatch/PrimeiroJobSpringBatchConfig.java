@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 
 @EnableBatchProcessing
 @Configuration
-public class BatchConfig {
+public class PrimeiroJobSpringBatchConfig {
 	@Autowired
 	private JobBuilderFactory jobBuilderFatory;
 	
@@ -34,7 +34,6 @@ public class BatchConfig {
 		return stepBuilderFactory
 				.get("imprimeOlaStep")
 				.tasklet(new Tasklet() {
-					
 					@Override
 					public RepeatStatus execute(StepContribution contribution, ChunkContext chunkContext) throws Exception {
 						System.out.println("Olá Mundo");
